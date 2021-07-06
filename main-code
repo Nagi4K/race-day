@@ -1,0 +1,27 @@
+// Defining variables
+let raceNumber = Math.floor(Math.random() * 1000);
+let registeredEarly;
+let randNum = Math.floor(Math.random() * 2);
+randNum === 0 ? registeredEarly = true : registeredEarly = false;
+// Function from user Ionut G. Stan @ https://stackoverflow.com/questions/1527803/generating-random-whole-numbers-in-javascript-in-a-specific-range
+function getRandomInt(min, max) {
+    min = Math.ceil(min);
+    max = Math.floor(max);
+    return Math.floor(Math.random() * (max - min + 1)) + min;
+}
+let runnerAge = getRandomInt(11, 69);
+/*let runnerAge = 18;*/
+if (runnerAge > 18 && registeredEarly === true) {
+  raceNumber += 1000;
+}
+
+// Printed Scripts
+if (runnerAge > 18 && registeredEarly === true) {
+  console.log(`Number ${raceNumber}, you will race at 9:30 am.`);
+} else if (runnerAge > 18 && registeredEarly === false) {
+  console.log(`Number ${raceNumber}, you will race at 11:00 am.`);
+} else if (runnerAge < 18) {
+  console.log(`Number ${raceNumber}, youth registrants run at 12:30 pm.`);
+} else {
+  console.log(`Number ${raceNumber}, please report to the registration desk.`);
+}
